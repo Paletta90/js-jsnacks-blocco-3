@@ -39,15 +39,16 @@ if (isNaN(nome)) {
     let check = false;
     let i = 0;
 
-    while (i < listInvitati.length) {
-
+    do{
+        
         // Rendo i nomi tutti senza spazio e tutti a lettere maiuscole
-        if (listInvitati[i].trim().toUpperCase() == nome.trim().toUpperCase()){
+        if (String(listInvitati[i]).trim().toUpperCase() == nome.trim().toUpperCase()){
             check = true
         }
 
         i++;
-    }
+
+    }while (check == false && i < listInvitati.length) 
 
     if(check == true){
         container.innerHTML = `${nome} è nella lista invitati`
